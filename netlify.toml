@@ -2,6 +2,16 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  # Netlify sets NODE_ENV=production during the install step by default,
+  # which makes npm skip devDependencies (vite, typescript, tailwindcss,
+  # @vitejs/plugin-react) — and the build fails because `vite`/`tsc` are
+  # missing. Force npm to install devDependencies too.
+  NPM_CONFIG_PRODUCTION = "false"
+  NODE_ENV = "development"
+  # @vitejs/plugin-react requires Node ^20.19.0 || >=22.12.0
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
