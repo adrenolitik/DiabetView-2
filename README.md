@@ -1,5 +1,26 @@
 # DiabetView 2
 
+## Project Overview
+
+**DiabetView 2** is a fully client-side (static) web application designed to improve **treatment adherence for Type 2 Diabetes Mellitus (T2DM)** patients by making the causal relationships behind their condition visible, interactive, and personal.
+
+Instead of generic advice like "eat less sugar, move more," DiabetView 2 turns each patient's data into an interactive **Causal Loop Diagram (CLD)**, lets them run **What-If counterfactual scenarios**, simulate their own **24-hour glucose curve** on a **Digital Twin**, and log daily adherence — all backed by an educational AI assistant chat (running in a local, offline demo mode).
+
+**Core modules:**
+| # | Module | What it does |
+|---|--------|---------------|
+| 1 | **CLD Map** | Interactive Causal Loop Diagram: 11 factors (diet, glucose, HbA1c, activity, motivation, fear, complications, etc.) connected through 5 feedback loops (reinforcing "R" and balancing "B"). Click any node to see its leverage score and a "What-If" hint. |
+| 2 | **What-If / Counterfactual Engine** | 4 ready-made scenarios (Minimum Viable Recommendation, Ambitious target, "No change" risk projection, and a behavioral "post-dinner walk" scenario) with projected HbA1c, complication risk change, and an Individual Treatment Effect (ITE) risk/benefit breakdown. |
+| 3 | **Digital Twin** | Live simulator of a patient's 24h glucose curve (CGM-style chart) driven by sliders for activity, carb intake, medication adherence, sleep, stress, and a post-meal walk toggle. |
+| 4 | **Adherence Dashboard** | Daily self-monitoring log, gamified achievements, and a one-click "doctor visit report" generator (copy/print). |
+| 5 | **AI Assistant (offline demo mode)** | Chat with rule-based, structured educational answers generated entirely in the browser from the patient profile and selected scenario — no network calls, no API key, works without a VPN. |
+
+**Tech stack:** React 19 + TypeScript + Vite 6 + Tailwind CSS 4 + Recharts + Lucide Icons. No backend, no database — 100% static build, deployable to Netlify (or any static host) with zero environment variables.
+
+> The rest of this README (in Russian) goes into more detail on architecture, bug fixes, project structure, usage, and deployment steps.
+
+---
+
 ## О проекте
 - **Название**: DiabetView 2
 - **Цель**: Повышение приверженности лечению сахарного диабета 2 типа (СД2) через наглядное объяснение причинно-следственных связей организма пациента.
